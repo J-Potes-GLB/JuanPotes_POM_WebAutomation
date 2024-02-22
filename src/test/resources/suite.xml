@@ -3,11 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/juan.potes/Documents/TAE Training/Web Automation/JuanPotes_POM_WebAutomation/src">
         <classes>
-            <class name="tests.PurchaseProductTest">
-                <methods>
-                    <include name="purchaseProduct"/>
-                </methods>
-            </class>
+            <class name="tests.PurchaseProductTest"/>
         </classes>
     </test>
 </suite>
