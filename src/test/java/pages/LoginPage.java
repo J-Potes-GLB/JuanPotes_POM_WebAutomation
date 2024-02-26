@@ -23,11 +23,13 @@ public class LoginPage extends BasePage {
 
     public void setUserName(String userName){
         waitUntilVisibleElement(this.userNameInput);
+        this.userNameInput.click();
         this.userNameInput.sendKeys(userName);
     }
 
     public void setPassword(String password){
         waitUntilVisibleElement(this.passwordInput);
+        this.passwordInput.click();
         this.passwordInput.sendKeys(password);
     }
 
