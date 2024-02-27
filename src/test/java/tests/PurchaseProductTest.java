@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.CheckoutStepOnePage;
+import pages.CheckoutStepTwoPage;
 import pages.ItemDetailsPage;
 import pages.ShoppingCartPage;
 import utils.BaseTest;
@@ -34,10 +35,10 @@ public class PurchaseProductTest extends BaseTest {
         checkoutStepOnePage.setPostalCode(POSTAL_CODE);
 
         // Click continue
-        checkoutStepOnePage.clickContinueButton();
+        CheckoutStepTwoPage checkoutStepTwoPage = checkoutStepOnePage.clickContinueButton();
 
         // Confirm purchase
-
+        checkoutStepTwoPage.clickFinishButton();
 
         // Check the thank you screen
 

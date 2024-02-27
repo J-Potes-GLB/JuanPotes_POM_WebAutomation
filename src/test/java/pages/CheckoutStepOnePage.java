@@ -40,8 +40,9 @@ public class CheckoutStepOnePage extends BasePage {
         this.postalCodeInput.sendKeys(String.valueOf(postalCode));
     }
 
-    public void clickContinueButton(){
+    public CheckoutStepTwoPage clickContinueButton(){
         waitUntilVisibleElement(this.continueButton);
         this.continueButton.click();
+        return new CheckoutStepTwoPage(getDriver());
     }
 }
