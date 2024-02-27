@@ -7,10 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import pages.InventoryPage;
 import pages.LoginPage;
 
 public class BaseTest {
-    WebDriver driver = null;
+    protected WebDriver driver = null;
+    protected InventoryPage inventoryPage;
+    protected SoftAssert softAssert = new SoftAssert();
 
     public void setDriver(){
         driver = new ChromeDriver();
@@ -27,7 +31,7 @@ public class BaseTest {
         loginPage.setPassword(password);
 
         //Click on Login
-        loginPage.clickOnLoginButton();
+        inventoryPage = loginPage.clickOnLoginButton();
     }
 
     @BeforeMethod

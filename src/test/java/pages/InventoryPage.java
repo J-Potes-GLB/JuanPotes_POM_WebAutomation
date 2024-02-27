@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import utils.BasePage;
 
 public class InventoryPage extends BasePage {
+    @FindBy(css = "span.title")
+    private WebElement productsTitle;
+
     @FindBy(id = "item_5_title_link")
     private WebElement itemLink;
 
@@ -17,5 +20,10 @@ public class InventoryPage extends BasePage {
         waitUntilVisibleElement(this.itemLink);
         this.itemLink.click();
         return new ItemDetailsPage(super.getDriver());
+    }
+
+    public String getProductsTitleText(){
+        waitUntilVisibleElement(this.productsTitle);
+        return this.productsTitle.getText();
     }
 }
