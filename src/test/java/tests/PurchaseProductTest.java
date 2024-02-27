@@ -22,7 +22,7 @@ public class PurchaseProductTest extends BaseTest {
         ShoppingCartPage shoppingCartPage = itemDetailsPage.clickGoToCartButton();
 
         // Go to checkout
-
+        shoppingCartPage.clickCheckoutButton();
 
         // Fill personal information
 
