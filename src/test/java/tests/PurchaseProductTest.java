@@ -2,11 +2,15 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.CheckoutStepOnePage;
 import pages.ItemDetailsPage;
 import pages.ShoppingCartPage;
 import utils.BaseTest;
 
 public class PurchaseProductTest extends BaseTest {
+    private final String FIRST_NAME = "Juan";
+    private final String LAST_NAME = "Potes";
+    private final int POSTAL_CODE = 12345;
     @Test
     public void purchaseProduct(){
         // Check we are in the InventoryPage
@@ -22,10 +26,15 @@ public class PurchaseProductTest extends BaseTest {
         ShoppingCartPage shoppingCartPage = itemDetailsPage.clickGoToCartButton();
 
         // Go to checkout
-        shoppingCartPage.clickCheckoutButton();
+        CheckoutStepOnePage checkoutStepOnePage = shoppingCartPage.clickCheckoutButton();
 
         // Fill personal information
+        checkoutStepOnePage.setFirstName(FIRST_NAME);
+        checkoutStepOnePage.setLastName(LAST_NAME);
+        checkoutStepOnePage.setPostalCode(POSTAL_CODE);
 
+        // Click continue
+        checkoutStepOnePage.clickContinueButton();
 
         // Confirm purchase
 
