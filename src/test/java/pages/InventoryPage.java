@@ -17,6 +17,9 @@ public class InventoryPage extends BasePage {
     @FindBy(className = "btn_primary")
     private List<WebElement> addToCartButtons;
 
+    @FindBy(className = "shopping_cart_link")
+    private WebElement goToCartButton;
+
     public InventoryPage(WebDriver driver){
         super(driver);
     }
@@ -46,5 +49,11 @@ public class InventoryPage extends BasePage {
                 clickAddToCartButton(i);
             }
         }
+    }
+
+    public ShoppingCartPage clickGoToCartButton(){
+        waitUntilVisibleElement(this.goToCartButton);
+        this.goToCartButton.click();
+        return new ShoppingCartPage(getDriver());
     }
 }

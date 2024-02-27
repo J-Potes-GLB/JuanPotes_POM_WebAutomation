@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import pages.ShoppingCartPage;
 import utils.BaseTest;
 
 import java.util.List;
@@ -14,5 +15,8 @@ public class RemovingElementsTest extends BaseTest {
 
         // Add 3 items to the cart
         inventoryPage.addItemsToCart(3);
+
+        // Go to the shopping cart
+        ShoppingCartPage shoppingCartPage = inventoryPage.clickGoToCartButton();
     }
 }
