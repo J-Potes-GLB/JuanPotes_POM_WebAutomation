@@ -23,6 +23,9 @@ public class InventoryPage extends BasePage {
     @FindBy(id = "react-burger-menu-btn")
     private WebElement burguerMenu;
 
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logoutButton;
+
     public InventoryPage(WebDriver driver){
         super(driver);
     }
@@ -63,5 +66,11 @@ public class InventoryPage extends BasePage {
     public void clickBurguerMenu(){
         waitUntilVisibleElement(this.burguerMenu);
         this.burguerMenu.click();
+    }
+
+    public LoginPage clickLogOutButton(){
+        waitUntilVisibleElement(this.logoutButton);
+        this.logoutButton.click();
+        return new LoginPage(getDriver());
     }
 }

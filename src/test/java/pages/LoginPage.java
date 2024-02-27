@@ -21,6 +21,10 @@ public class LoginPage extends BasePage {
         this.driver.get(url);
     }
 
+    public LoginPage(WebDriver driver){
+        super(driver);
+    }
+
     public void setUserName(String userName){
         waitUntilVisibleElement(this.userNameInput);
         this.userNameInput.click();
@@ -37,5 +41,9 @@ public class LoginPage extends BasePage {
         waitUntilVisibleElement(this.loginButton);
         this.loginButton.click();
         return new InventoryPage(getDriver());
+    }
+
+    public boolean isLoginButtonDisplayed(){
+        return this.loginButton.isDisplayed();
     }
 }
