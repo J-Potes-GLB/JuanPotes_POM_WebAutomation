@@ -2,20 +2,20 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import pages.CheckoutStepOnePage;
-import pages.CheckoutStepTwoPage;
-import pages.ItemDetailsPage;
-import pages.ShoppingCartPage;
+import pages.*;
 import utils.BaseTest;
 
 public class PurchaseProductTest extends BaseTest {
-    private final String FIRST_NAME = "Juan";
-    private final String LAST_NAME = "Potes";
-    private final int POSTAL_CODE = 12345;
     @Test
     public void purchaseProduct(){
+        final String PRODUCTS_TITLE = "Products";
+        final String FIRST_NAME = "Juan";
+        final String LAST_NAME = "Potes";
+        final int POSTAL_CODE = 12345;
+        final String FINAL_MESSAGE = "Thank you for your order!";
+
         // Check we are in the InventoryPage
-        softAssert.assertEquals(inventoryPage.getProductsTitleText(), "Products");
+        softAssert.assertEquals(inventoryPage.getProductsTitleText(), PRODUCTS_TITLE);
 
         // Click on the item name and go to the ItemDetailsPage
         ItemDetailsPage itemDetailsPage = inventoryPage.clickItemLink();
@@ -38,10 +38,10 @@ public class PurchaseProductTest extends BaseTest {
         CheckoutStepTwoPage checkoutStepTwoPage = checkoutStepOnePage.clickContinueButton();
 
         // Confirm purchase
-        checkoutStepTwoPage.clickFinishButton();
+        CheckoutCompletePage checkoutCompletePage = checkoutStepTwoPage.clickFinishButton();
 
         // Check the thank you screen
-
+        softAssert.assertEquals(checkoutCompletePage.getThankyouMessageText(), FINAL_MESSAGE);
 
         softAssert.assertAll();
     }

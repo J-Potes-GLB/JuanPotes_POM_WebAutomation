@@ -13,8 +13,9 @@ public class CheckoutStepTwoPage extends BasePage {
         super(driver);
     }
 
-    public void clickFinishButton(){
+    public CheckoutCompletePage clickFinishButton(){
         waitUntilVisibleElement(this.finishButton);
         this.finishButton.click();
+        return new CheckoutCompletePage(getDriver());
     }
 }
