@@ -10,6 +10,9 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(name = "checkout")
     private WebElement checkoutButton;
 
+    @FindBy(className = "shopping_cart_badge")
+    private WebElement cartItemsNumber;
+
     public ShoppingCartPage(WebDriver driver){
         super(driver);
     }
@@ -18,5 +21,9 @@ public class ShoppingCartPage extends BasePage {
         waitUntilVisibleElement(this.checkoutButton);
         this.checkoutButton.click();
         return new CheckoutStepOnePage(getDriver());
+    }
+
+    public boolean cartHasItems(){
+        return this.cartItemsNumber.isDisplayed();
     }
 }

@@ -18,5 +18,13 @@ public class RemovingElementsTest extends BaseTest {
 
         // Go to the shopping cart
         ShoppingCartPage shoppingCartPage = inventoryPage.clickGoToCartButton();
+
+        // Remove elements from the cart
+
+
+        // Verify the cart is empty
+        softAssert.assertFalse(shoppingCartPage.cartHasItems(),"The cart is not empty");
+
+        softAssert.assertAll();
     }
 }
