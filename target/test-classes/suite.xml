@@ -5,8 +5,8 @@
     <parameter name="password" value="secret_sauce" />
     <test verbose="2" preserve-order="true" name="C:/Users/juan.potes/Documents/TAE Training/Web Automation/JuanPotes_POM_WebAutomation/src">
         <classes>
-<!--            <class name="tests.PurchaseProductTest"/>-->
-<!--            <class name="tests.RemovingElementsTest"/>-->
+            <class name="tests.PurchaseProductTest"/>
+            <class name="tests.RemovingElementsTest"/>
             <class name="tests.LogoutTest"/>
         </classes>
     </test>
