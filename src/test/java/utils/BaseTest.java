@@ -39,8 +39,8 @@ public class BaseTest {
         login(userName, password);
     }
 
-    @AfterMethod
-    public void close(){
-        driver.close();
-    }
+//    @AfterMethod
+//    public void close(){
+//        driver.close();
+//    }
 }
