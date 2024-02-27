@@ -8,7 +8,6 @@ import utils.BaseTest;
 public class PurchaseProductTest extends BaseTest {
     @Test
     public void purchaseProduct(){
-        final String PRODUCTS_TITLE = "Products";
         final String FIRST_NAME = "Juan";
         final String LAST_NAME = "Potes";
         final int POSTAL_CODE = 12345;
