@@ -17,6 +17,13 @@ public class ItemDetailsPage extends BasePage {
     }
 
     public void clickAddToCartButton(){
+        waitUntilVisibleElement(this.addToCartButton);
         this.addToCartButton.click();
+    }
+
+    public ShoppingCartPage clickGoToCartButton(){
+        waitUntilVisibleElement(this.goToCartButton);
+        this.goToCartButton.click();
+        return new ShoppingCartPage(getDriver());
     }
 }

@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.ItemDetailsPage;
+import pages.ShoppingCartPage;
 import utils.BaseTest;
 
 public class PurchaseProductTest extends BaseTest {
@@ -18,7 +19,7 @@ public class PurchaseProductTest extends BaseTest {
         itemDetailsPage.clickAddToCartButton();
 
         // Go to cart
-
+        ShoppingCartPage shoppingCartPage = itemDetailsPage.clickGoToCartButton();
 
         // Go to checkout
 
