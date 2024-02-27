@@ -6,6 +6,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/juan.potes/Documents/TAE Training/Web Automation/JuanPotes_POM_WebAutomation/src">
         <classes>
             <class name="tests.PurchaseProductTest"/>
+            <class name="tests.RemovingElementsTest"/>
         </classes>
     </test>
 </suite>

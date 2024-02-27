@@ -12,6 +12,7 @@ public class BaseTest {
     protected WebDriver driver = null;
     protected InventoryPage inventoryPage;
     protected SoftAssert softAssert = new SoftAssert();
+    protected final String PRODUCTS_TITLE = "Products";
 
     public void setDriver(){
         driver = new ChromeDriver();
@@ -31,14 +32,14 @@ public class BaseTest {
         inventoryPage = loginPage.clickOnLoginButton();
     }
 
-    @BeforeTest
+    @BeforeMethod
     @Parameters({"userName", "password"})
     public void prerequisites(String userName, String password){
         setDriver();
         login(userName, password);
     }
 
-    @AfterTest
+    @AfterMethod
     public void close(){
         driver.close();
     }
