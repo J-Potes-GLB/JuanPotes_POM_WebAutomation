@@ -7,10 +7,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.InventoryPage;
 import pages.LoginPage;
 
 public class BaseTest {
     WebDriver driver = null;
+    protected InventoryPage inventoryPage;
 
     public void setDriver(){
         driver = new ChromeDriver();
@@ -27,7 +29,7 @@ public class BaseTest {
         loginPage.setPassword(password);
 
         //Click on Login
-        loginPage.clickOnLoginButton();
+        inventoryPage = loginPage.clickOnLoginButton();
     }
 
     @BeforeMethod

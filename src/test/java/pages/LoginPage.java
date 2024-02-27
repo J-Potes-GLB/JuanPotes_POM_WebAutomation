@@ -33,8 +33,9 @@ public class LoginPage extends BasePage {
         this.passwordInput.sendKeys(password);
     }
 
-    public void clickOnLoginButton(){
+    public InventoryPage clickOnLoginButton(){
         waitUntilVisibleElement(this.loginButton);
         this.loginButton.click();
+        return new InventoryPage(getDriver());
     }
 }

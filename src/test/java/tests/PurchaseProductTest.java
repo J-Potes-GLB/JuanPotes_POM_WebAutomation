@@ -10,5 +10,6 @@ public class PurchaseProductTest extends BaseTest {
 //        WebDriver driver = new ChromeDriver();
 //        String url = "https://www.saucedemo.com/";
 //        driver.get(url);
+
     }
 }
