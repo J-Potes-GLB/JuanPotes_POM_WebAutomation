@@ -5,12 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.BasePage;
 
+import java.util.List;
+
 public class InventoryPage extends BasePage {
     @FindBy(css = "span.title")
     private WebElement productsTitle;
 
     @FindBy(id = "item_5_title_link")
     private WebElement itemLink;
+
+    @FindBy(className = "btn_primary")
+    private List<WebElement> addToCartButtons;
 
     public InventoryPage(WebDriver driver){
         super(driver);
@@ -25,5 +30,21 @@ public class InventoryPage extends BasePage {
     public String getProductsTitleText(){
         waitUntilVisibleElement(this.productsTitle);
         return this.productsTitle.getText();
+    }
+
+    private void clickAddToCartButton(int index){
+        waitUntilVisibleElement(this.addToCartButtons.get(index));
+        this.addToCartButtons.get(index).click();
+    }
+
+    public void addItemsToCart(int quantity){
+        if(quantity > this.addToCartButtons.size()){
+            quantity = this.addToCartButtons.size();
+        }
+        if(quantity > 0){
+            for(int i = 0; i < quantity; i++){
+                clickAddToCartButton(i);
+            }
+        }
     }
 }
