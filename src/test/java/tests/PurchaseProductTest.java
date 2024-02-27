@@ -17,6 +17,21 @@ public class PurchaseProductTest extends BaseTest {
         // Add the product to the cart
         itemDetailsPage.clickAddToCartButton();
 
+        // Go to cart
+
+
+        // Go to checkout
+
+
+        // Fill personal information
+
+
+        // Confirm purchase
+
+
+        // Check the thank you screen
+
+
         softAssert.assertAll();
     }
 }

@@ -9,6 +9,9 @@ public class ItemDetailsPage extends BasePage {
     @FindBy(className = "btn_inventory")
     private WebElement addToCartButton;
 
+    @FindBy(className = "shopping_cart_link")
+    private WebElement goToCartButton;
+
     public ItemDetailsPage(WebDriver driver){
         super(driver);
     }
