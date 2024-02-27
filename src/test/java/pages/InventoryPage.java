@@ -20,6 +20,12 @@ public class InventoryPage extends BasePage {
     @FindBy(className = "shopping_cart_link")
     private WebElement goToCartButton;
 
+    @FindBy(id = "react-burger-menu-btn")
+    private WebElement burguerMenu;
+
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logoutButton;
+
     public InventoryPage(WebDriver driver){
         super(driver);
     }
@@ -55,5 +61,16 @@ public class InventoryPage extends BasePage {
         waitUntilVisibleElement(this.goToCartButton);
         this.goToCartButton.click();
         return new ShoppingCartPage(getDriver());
+    }
+
+    public void clickBurguerMenu(){
+        waitUntilVisibleElement(this.burguerMenu);
+        this.burguerMenu.click();
+    }
+
+    public LoginPage clickLogOutButton(){
+        waitUntilVisibleElement(this.logoutButton);
+        this.logoutButton.click();
+        return new LoginPage(getDriver());
     }
 }
