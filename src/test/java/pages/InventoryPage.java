@@ -12,4 +12,10 @@ public class InventoryPage extends BasePage {
     public InventoryPage(WebDriver driver){
         super(driver);
     }
+
+    public ItemDetailsPage clickItemLink(){
+        waitUntilVisibleElement(this.itemLink);
+        this.itemLink.click();
+        return new ItemDetailsPage(super.getDriver());
+    }
 }
