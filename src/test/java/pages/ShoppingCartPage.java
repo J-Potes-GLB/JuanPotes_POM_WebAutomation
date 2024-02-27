@@ -34,7 +34,6 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public void removeItemsFromCart(int quantity){
-        System.out.println("Remove Buttons: " + this.removeButtons.size());
         if(quantity > this.removeButtons.size()){
             quantity = this.removeButtons.size();
         }
