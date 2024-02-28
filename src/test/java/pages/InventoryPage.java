@@ -11,7 +11,8 @@ public class InventoryPage extends BasePage {
     @FindBy(css = "span.title")
     private WebElement productsTitle;
 
-    @FindBy(id = "item_5_title_link")
+    // id = "item_5_title_link"
+    @FindBy(xpath = "//div[contains(text(),'Test.allTheThings() T-Shirt (Red)')]/ancestor::a")
     private WebElement itemLink;
 
     @FindBy(className = "btn_primary")
